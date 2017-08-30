@@ -1,0 +1,30 @@
+{
+  "name": "ikb-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marceloneil/ikb-server.git"
+  },
+  "author": "Marcel O'Neil <marcel@marceloneil.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marceloneil/ikb-server/issues"
+  },
+  "homepage": "https://github.com/marceloneil/ikb-server#readme",
+  "dependencies": {
+    "web3": "^1.0.0-beta.18"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

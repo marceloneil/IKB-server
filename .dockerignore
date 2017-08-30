@@ -1,0 +1,5 @@
+.eslintrc
+.git/
+.gitignore
+Dockerfile
+node_modules/
