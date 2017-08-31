@@ -9,7 +9,7 @@ Promise.promisifyAll(web3)
 console.log(web3)
 
 const kleinABI = require('./IKB.json')
-const kleinContract = web3.eth.Contract(kleinABI)
+const kleinContract = new web3.eth.Contract(kleinABI)
 const kleinInstance = kleinContract.at('0x88ae96845e157558ef59e9ff90e766e22e480390')
 
 app.get('/', function (req, res) {
