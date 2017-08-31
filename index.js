@@ -10,7 +10,7 @@ const kleinABI = require('./IKB.json')
 const kleinContract = new web3.eth.Contract(kleinABI)
 // console.log(kleinContract)
 console.log(kleinContract.options)
-kleinContract.options.setAddress('0x88ae96845e157558ef59e9ff90e766e22e480390')
+kleinContract.options.address = '0x88ae96845e157558ef59e9ff90e766e22e480390'
 console.log(kleinContract.options)
 const kleinInstance = kleinContract.at('0x88ae96845e157558ef59e9ff90e766e22e480390')
 
