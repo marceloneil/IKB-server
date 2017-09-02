@@ -18,7 +18,8 @@ app.get('/', function (req, res) {
   let contract
   console.log(kleinContract)
   console.log(kleinContract.methods.currentSeries)
-  kleinContract.currentSeries.call().then(currentSeries => {
+  console.log(kleinContract.call)
+  kleinContract.methods.currentSeries.call().then(currentSeries => {
     contract.currentSeries = currentSeries.toNumber()
     return kleinContract.issuedToDate.call()
   }).then(issuedToDate => {
