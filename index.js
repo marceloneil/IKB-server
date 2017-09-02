@@ -3,16 +3,13 @@ const Promise = require('bluebird')
 const Web3 = require('web3')
 
 const app = Express()
-const web3 = new Web3('ws://parity:8545')
-Promise.promisifyAll(web3)
+const web3 = new Web3()
+web3.setProvider(new web3.providers.HttpProvider('ws://parity:8545'))
 
 const kleinABI = require('./IKB.json')
 const kleinContract = new web3.eth.Contract(kleinABI)
-// console.log(kleinContract)
-// console.log(kleinContract.options)
+const test = kleinContract.at('0x88ae96845e157558ef59e9ff90e766e22e480390')
 kleinContract.options.address = '0x88ae96845e157558ef59e9ff90e766e22e480390'
-// console.log(kleinContract.options)
-// const kleinInstance = kleinContract.at('0x88ae96845e157558ef59e9ff90e766e22e480390')
 
 app.get('/', function (req, res) {
   let contract
