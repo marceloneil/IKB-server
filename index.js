@@ -17,7 +17,7 @@ kleinContract.options.address = '0x88ae96845e157558ef59e9ff90e766e22e480390'
 app.get('/', function (req, res) {
   let contract
   console.log(kleinContract)
-  console.log(kleinContract.currentSeries)
+  console.log(kleinContract.methods.currentSeries)
   kleinContract.currentSeries.call().then(currentSeries => {
     contract.currentSeries = currentSeries.toNumber()
     return kleinContract.issuedToDate.call()
