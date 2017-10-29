@@ -7,12 +7,14 @@ services:
     command: "--light --datadir /opt/chain"
     volumes:
       - "chain:/opt/chain"
+    restart: always
   server:
     image: "marceloneil/ikb-server:latest"
     ports:
       - "80:3000"
     volumes:
       - "chain:/opt/chain"
+    restart: always
     depends_on:
       - geth
 
