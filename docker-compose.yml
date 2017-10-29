@@ -4,7 +4,7 @@ services:
   geth:
     image: "ethereum/client-go"
     hostname: "geth"
-    command: "--light --datadir /opt/chain"
+    command: "--fast --datadir /opt/chain"
     volumes:
       - "chain:/opt/chain"
     restart: always
