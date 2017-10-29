@@ -1,8 +1,11 @@
-const Express = require('express')
+const express = require('express')
+const cors = require('cors')
 const Web3 = require('web3')
 
-const app = Express()
+const app = express()
 const web3 = new Web3()
+
+app.use(cors())
 web3.setProvider(new web3.providers.HttpProvider('http://parity:8545'))
 
 const kleinABI = require('./IKB.json')

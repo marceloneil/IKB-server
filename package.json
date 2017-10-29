@@ -19,6 +19,7 @@
   "homepage": "https://github.com/marceloneil/ikb-server#readme",
   "dependencies": {
     "bluebird": "^3.5.0",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
     "web3": "^1.0.0-beta.18"
   },
