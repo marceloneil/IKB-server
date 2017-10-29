@@ -1,12 +1,12 @@
 const express = require('express')
 const cors = require('cors')
+const net = require('net')
 const Web3 = require('web3')
 
 const app = express()
-const web3 = new Web3()
+const web3 = new Web3('/opt/chain/geth.ipc', net)
 
 app.use(cors())
-web3.setProvider(new web3.providers.HttpProvider('http://parity:8545'))
 
 const kleinABI = require('./IKB.json')
 const kleinContract = new web3.eth.Contract(kleinABI)

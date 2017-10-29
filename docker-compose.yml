@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  geth:
+    image: "ethereum/client-go"
+    hostname: "geth"
+    command: "--light --datadir /opt/chain"
+    volumes:
+      - "chain:/opt/chain"
+  server:
+    image: "marceloneil/ikb-server:latest"
+    ports:
+      - "80:3000"
+    volumes:
+      - "chain:/opt/chain"
+    depends_on:
+      - geth
+
+volumes:
+  chain:

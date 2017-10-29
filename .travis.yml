@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+language: bash
+script:
+  - docker build . -t $TRAVIS_REPO_SLUG
+  - >
+    if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+      docker push $TRAVIS_REPO_SLUG
+    fi
