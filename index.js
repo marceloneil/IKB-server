@@ -1,10 +1,9 @@
 const express = require('express')
 const cors = require('cors')
-const net = require('net')
 const Web3 = require('web3')
 
 const app = express()
-const web3 = new Web3('/opt/chain/geth.ipc', net)
+const web3 = new Web3('ws://geth:8546')
 
 app.use(cors())
 

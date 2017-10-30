@@ -1,10 +1,9 @@
-version: '3'
+version: '2'
 
 services:
   geth:
     image: "ethereum/client-go"
-    hostname: "geth"
-    command: "--fast --datadir /opt/chain"
+    command: "--fast --datadir /opt/chain --ws --wsaddr 0.0.0.0 --wsorigins *"
     volumes:
       - "chain:/opt/chain"
     restart: always
@@ -12,8 +11,6 @@ services:
     image: "marceloneil/ikb-server:latest"
     ports:
       - "80:3000"
-    volumes:
-      - "chain:/opt/chain"
     restart: always
     depends_on:
       - geth
