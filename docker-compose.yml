@@ -6,14 +6,17 @@ services:
     hostname: "geth"
     command: "--fast --datadir /opt/chain"
     volumes:
-      - "/opt/chain:/opt/chain"
+      - "chain:/opt/chain"
     restart: always
   server:
     image: "marceloneil/ikb-server:latest"
     ports:
       - "80:3000"
     volumes:
-      - "/opt/chain:/opt/chain"
+      - "chain:/opt/chain"
     restart: always
     depends_on:
       - geth
+
+volumes:
+  chain:
